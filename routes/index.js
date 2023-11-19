@@ -12,8 +12,10 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/profile',isLoggedIn, function (req, res, next) {
+  res.send("Profile")
+});
 
-})
+
 
 router.get('/register', function (req, res) {
   const { username, email, fullname } = req.body;
@@ -21,8 +23,8 @@ router.get('/register', function (req, res) {
 
   userModel.register(userData, req.body.password)
     .then(function () {
-      passport.authenticate('local')(req, res, function () {
-        res.redirect('/profile');
+      passport.authenticate("local")(req, res, function () {
+        res.redirect('/profile')
       })
     })
 })
@@ -31,24 +33,22 @@ router.get('/register', function (req, res) {
 router.get('/login',
   passport.authenticate("local", {
     successRedirect: '/profile',
-    failureRedirect: '/login',
+    failureRedirect: '/',
   }), function (req, res, next) {
   });
 
 
-router.get('/logout', function (req, res, next) {
+router.get('/logout', function (req, res) {
   req.logout(function (err) {
-    if (err) {
-      return next(err);
-    }
+    if (err) { return next(err); }
     res.redirect('/');
-  })
+  });
 });
 
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
-  res.redirect('/login');
+  res.redirect('/');
 }
 
 
