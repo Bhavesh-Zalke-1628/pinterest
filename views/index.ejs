@@ -1,44 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./stylesheets/style.css">
-</head>
-
-<body>
-  <div class="container">
-    <div class="content">
-      <!--pinterest logo-->
-      <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo"
-        class="img1" />
-      <p class="header">Make Accout To See More</p>
-
-      <input type="email" name="email" placeholder="Email" class="detail" /><br />
-      <input type="text" name="name" placeholder="name" class="detail" /><br />
-      <input type="text" name="fullname" placeholder="Fullname" class="detail" /><br />
-      <input type="password" name="password" placeholder="Password" class="detail" />
-
-      <h4>Forgot your password?</h4>
-
-      <button class="btn int">Log in</button>
-      <p class="or">OR</p>
-      <button class="btn fbk">
-        <i class="fab fa-facebook fa-lg" style="color: white; padding-right: 10px"></i><a href="#">Continue with
-          Facebook</a></button><br />
-      <button class="btn ggl">
-        <i class="fab fa-google" style="color: rgb(11, 241, 22); padding-right: 10px"></i><a href="#">Continue with
-          Google</a>
-      </button>
-      it
+<% include ./Partials/header.ejs%>
+  <div class="h-screen w-full bg-zinc-300 flex items-center justify-center bg-cover bg-center">
+    <div class="w-[25vw]  bg-white px-20 py-10 rounded-[30px]">
+      <h1 class="text-3xl text-center tracking-tighter capitalize leading-none ">Welcome To pintrest</h1>
+      <form action="">
+        <input class="block border-2 rounded-md  mt-2  w-full px-3 py-2 " type="text" name="usernmae"
+          placeholder="username">
+        <input class="block border-2 rounded-md  mt-2  w-full px-3 py-2 " type="password" name="password"
+          placeholder="password">
+        <a class="inline-block font-semibold text-zinc-500 mt-2" href="#">Forgot password</a>
+        <input class="block border-2 rounded-full  mt-2  w-full px-3 py-2 bg-red-600 text-white rounded-full "
+          type="submit" value="Log in" name="" id="">
+        <p class="text-xs font-semibold text-zinc-700 text-center mt-7 ">By continuing, you agree to Pinterest's Terms of Service; Opens a new tab and acknowledge you've read our
+          Privacy Policy</p>
+      </form>
+      <a href="/register" class="inline-block mt-7 text-sm text-zinc-700 text-center font-semibold">Dont have an Accound ?</a>
     </div>
   </div>
-  <a href="" class="upbtn">Sign up</a href="">
-
-
-</body>
-
-</html>
+  <% include ./Partials/footer.ejs%>
